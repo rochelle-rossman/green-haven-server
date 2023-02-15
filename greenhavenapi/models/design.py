@@ -17,4 +17,4 @@ class Design(models.Model):
     )
     room = models.CharField(max_length=15, choices=ROOM_CHOICES)
     style = models.CharField(max_length=25, choices=STYLE_CHOICES)
-    image_url = models.CharField(max_length=40)
+    image_url = models.CharField(max_length=100)
