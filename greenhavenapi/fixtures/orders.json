@@ -1,0 +1,29 @@
+[
+  {
+    "model": "greenhavenapi.order",
+    "pk": 1,
+    "fields": {
+      "customer": 1,
+      "ordered_on": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model":"greenhavenapi.order",
+    "pk": 2,
+    "fields": {
+      "customer": 2,
+      "ordered_on":null,
+      "payment_method":null
+    }
+  },
+  {
+    "model": "greenhavenapi.order",
+    "pk": 3,
+    "fields":{
+      "customer": 1,
+      "ordered_on": null,
+      "payment_method": 2
+    }
+  }
+]

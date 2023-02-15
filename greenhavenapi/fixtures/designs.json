@@ -1,0 +1,92 @@
+[
+  {
+    "model": "greenhavenapi.design",
+    "pk": 1,
+    "fields": {
+      "room": "living_room",
+      "style": "midcentury_modern",
+      "image_url": "https://miro.medium.com/max/1400/1*zycJdgMbLw3jODarBkR-PA.jpeg"
+    }
+  },
+  {
+    "model":"greenhavenapi.design",
+    "pk": 2,
+    "fields":{
+      "room": "bathroom",
+      "style": "traditional",
+      "image_url": "https://media.houseandgarden.co.uk/photos/6294943156618cb1641c6da5/16:9/w_2560%2Cc_limit/MFOX9870.jpg"
+    }
+  },
+  {
+    "model":"greenhavenapi.design",
+    "pk": 3,
+    "fields":{
+      "room": "office",
+      "style": "midcentury_modern",
+      "image_url": "https://cdn20.pamono.com/l/f/2018/05/0000068511-1200x1800/interior-vignette-featured-in-the-hibiscus-room-tumblr.jpg"
+    }
+  },
+  {
+    "model": "greenhavenapi.design",
+    "pk": 4,
+    "fields": {
+      "room":"living_room",
+      "style": "midcentury_modern",
+      "image_url": "https://connectht.com/media/zoo/images/multi-room-audio-sonos-or-savant__3bb339be16cedf92b6c6fb791c36d0ad.png"
+    }
+  },
+  {
+    "model": "greenhavenapi.design",
+    "pk": 5,
+    "fields": {
+      "room":"living_room",
+      "style": "industrial",
+      "image_url": "https://miro.medium.com/max/1280/1*CaYuXV0WIDk5N0Eo74ldnA.jpeg"
+    }
+  },
+  {
+    "model": "greenhavenapi.design",
+    "pk": 6,
+    "fields":{
+      "room": "living_room",
+      "style": "industrial",
+      "image_url": "https://www.plantz.com/wp-content/uploads/2019/07/decorating-with-plants-1024x682.jpeg"
+  }
+},
+{
+  "model": "greenhavenapi.design",
+  "pk": 7,
+  "fields": {
+    "room":"living_room",
+    "style": "modern",
+    "image_url": "https://www.nobroker.in/blog/wp-content/uploads/2022/05/Indoor-Plants-That-Every-Home-1.jpg"
+  }
+},
+{
+  "model": "greenhavenapi.design",
+  "pk": 8,
+  "fields": {
+    "room": "bedroom",
+    "style": "bohemian",
+    "image_url": "https://www.thespruce.com/thmb/B6iNO0Zw1lzRZ9Hsy8uCJ8sPNY0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/141994056_211449890722989_3493684505811403859_n-48b950a264964882a6a8dd14ea7ae3ec.jpg"
+  }
+},
+{
+  "model": "greenhavenapi.design",
+  "pk": 9,
+  "fields":{
+    "room": "living_room",
+    "style": "midcentury_modern",
+    "image_url": "https://www.mydomaine.com/thmb/Zggi2Ll3FjFP3vB1Oo3CodI_IdA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyBowser_MOTOLivingRoom_PhotobySaraLigorria-Tramp_4-d407422e851e44b8b4772bf079316fd1.jpg"
+  }
+},
+{
+  "model":"greenhavenapi.design",
+  "pk": 10,
+  "fields": {
+    "room": "bedroom",
+    "style": "midcentury_modern",
+    "image_url": "https://www.thespruce.com/thmb/NSWVxjviOIFoLHMr71npV-sayZM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/210372189_813818485944306_4404805707323088362_n-6ea32b0c085d45ffa41ae44ccf3a0df9.jpg"
+  }
+}
+]

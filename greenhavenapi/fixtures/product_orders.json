@@ -1,0 +1,20 @@
+[
+  {
+    "model": "greenhavenapi.productorder",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "product": 1,
+      "quantity": 1
+    }
+  },
+  {
+    "model":"greenhavenapi.productorder",
+    "pk": 2,
+    "fields": {
+      "order":1,
+      "product": 2,
+      "quantity":1
+    }
+  }
+]
