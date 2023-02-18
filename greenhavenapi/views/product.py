@@ -25,7 +25,7 @@ class ProductSerializer(serializers.ModelSerializer):
         
 
     def to_representation(self, instance):
-        """Filter out fields with null or blank values."""
+        """Filter out fields with null or blank values, return product types, and human readable representations of data."""
         # get the default serialized representation of the instance
         data = super().to_representation(instance)
         product_types = instance.product_type.all()

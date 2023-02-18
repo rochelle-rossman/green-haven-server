@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from greenhavenapi.views import check_user, register_user, UserView, ProductView, ProductTypeView
+from greenhavenapi.views import check_user, register_user, UserView, ProductView, ProductTypeView, OrderView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserView, 'user')
 router.register(r'products', ProductView, 'product')
 router.register(r'product_types', ProductTypeView, 'product_type')
+router.register(r'orders', OrderView, 'order')
 
 urlpatterns = [
     path('register', register_user),
