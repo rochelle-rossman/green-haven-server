@@ -8,19 +8,7 @@
       "description": "A South American prayer plant kept for its clean, designer-quality foliage, Orbifolia is one of the largest Calatheas. Its bold oval leaves can grow over a foot across – it makes a classic statement plant.",
       "price": 40.0,
       "inventory": 50,
-      "product_type": "houseplant"
-    }
-  },
-  {
-    "model": "greenhavenapi.houseplant",
-    "pk": 1,
-    "fields": {
-      "name": "Calathea Orbifolia",
-      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/ba5191f4db9d--pl-MarantaLemonLime-4IN-po-cer-black-2253ce_730x.jpg?v=1643913437",
-      "description": "A South American prayer plant kept for its clean, designer-quality foliage, Orbifolia is one of the largest Calatheas. Its bold oval leaves can grow over a foot across – it makes a classic statement plant.",
-      "price": 40.0,
-      "inventory": 50,
-      "product_type": "houseplant",
+      "product_type": [1],
       "light_level": "high",
       "water_needs": "medium",
       "care_level": "novice",
@@ -36,19 +24,7 @@
       "description": "Rosewood credenza with dovetail construction & round tapered legs. Eight outer drawers with rounded handles. Center door opens to reveal five additional drawers inside. Dimensions: 75.5\"L | 19\"D | 32\"H",
       "price": 1350.0,
       "inventory": 10,
-      "product_type": "home_decor"
-    }
-  },
-  {
-    "model": "greenhavenapi.homedecor",
-    "pk": 1,
-    "fields": {
-      "name": "Mid Century Walnut Sideboard",
-      "image_url": "https://cdn.shopify.com/s/files/1/0316/3657/products/DSC04493.jpg?v=1636063112",
-      "description": "Rosewood credenza with dovetail construction & round tapered legs. Eight outer drawers with rounded handles. Center door opens to reveal five additional drawers inside. Dimensions: 75.5\"L | 19\"D | 32\"H",
-      "price": 1350.0,
-      "inventory": 10,
-      "product_type": "home_decor",
+      "product_type": [2],
       "style": "midcentury_modern"
     }
   },
@@ -61,19 +37,7 @@
       "description": "Fiddle Leaf Figs, 'Ficus Lyrata', are gorgeous plants known for their large leaves and vibrant green colors.   With their big broad leaves, the fiddle leaf fig is definitely one of the most iconic house plants out there.",
       "price": 80.0,
       "inventory": 60,
-      "product_type": "houseplant"
-    }
-  },
-  {
-    "model": "greenhavenapi.houseplant",
-    "pk": 2,
-    "fields": {
-      "name": "Fiddle Leaf Fig",
-      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/2560ed704a20--PL-FicusLyrata-10IN-po-grower-b891de.jpg?v=1633554125",
-      "description": "Fiddle Leaf Figs, 'Ficus Lyrata', are gorgeous plants known for their large leaves and vibrant green colors.   With their big broad leaves, the fiddle leaf fig is definitely one of the most iconic house plants out there.",
-      "price": 80.0,
-      "inventory": 60,
-      "product_type": "houseplant",
+      "product_type": [1],
       "light_level": "medium",
       "water_needs": "medium",
       "care_level": "novice",
@@ -89,19 +53,7 @@
       "description": "The Burgundy Rubber Tree is easy for beginners and a great starter plant! They can quickly grow up to 8' inside and do best in bright to moderate indirect light.",
       "price": 40.0,
       "inventory": 60,
-      "product_type": "houseplant"
-    }
-  },
-  {
-    "model": "greenhavenapi.houseplant",
-    "pk": 3,
-    "fields": {
-      "name": "Burgundy Rubber Plant",
-      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/b01fa004e665--Rubberplant-Grower-6IN-dfe112.jpg?v=1623850416",
-      "description": "The Burgundy Rubber Tree is easy for beginners and a great starter plant! They can quickly grow up to 8' inside and do best in bright to moderate indirect light.",
-      "price": 40.0,
-      "inventory": 60,
-      "product_type": "houseplant",
+      "product_type": [1],
       "light_level": "medium",
       "water_needs": "low",
       "care_level": "novice",
@@ -117,7 +69,8 @@
       "description": "This round planter is made from concrete material in a neutral gray tone, a great addition to your indoor or outdoor plant display.",
       "price": 45.0,
       "inventory": 25,
-      "product_type": "planters_stands"
+      "product_type": [3, 2],
+      "style": "industrial"
     }
   },
   {
@@ -129,7 +82,7 @@
       "description": "Our Growbar is the vital solution for creating a lush plantscape in sun-deprived spaces. Its full spectrum LED grow light nourishes low-to-bright light loving plants.",
       "price": 45.0,
       "inventory": 100,
-      "product_type": "plant_care"
+      "product_type": [4]
     }
   },
   {
@@ -141,7 +94,7 @@
       "description": "Specially crafted for all types of houseplants including indoor plants, tropicals, orchids, air plants, desert plants, potted plants, balcony or windowsill planters and self-watering containers. Use it on a new plant or to revitalize old ones.",
       "price": 17.95,
       "inventory": 100,
-      "product_type": "plant_care"
+      "product_type": [4]
     }
   },
   {
@@ -153,7 +106,7 @@
       "image_url": "https://secure.img1-cg.wfcdn.com/im/97370728/resize-h800-w800%5Ecompr-r85/1654/165443772/Durham+Plant+Stand+-+Set+of+2.jpg",
       "price": 49.95,
       "inventory": 25,
-      "product_type": "planters_stands"
+      "product_type": [3]
     }
   },
   {
@@ -165,7 +118,8 @@
       "description": "Fit Various Pot Sizes - Our 4-Pack Macramé Plant Hangers can fit small and large pots of up to 10 inches",
       "price": 24.99,
       "inventory": 50,
-      "product_type": "planters_stands"
+      "product_type": [2, 3],
+      "style": "bohemian"
     }
   },
   {
@@ -177,19 +131,7 @@
       "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/c1edd79c08b4--pl-MajesticPalm-8IN-pl-grower-132401_730x.jpg?v=1651182191",
       "price": 75.0,
       "inventory": 45,
-      "product_type": "houseplant"
-    }
-  },
-  {
-    "model": "greenhavenapi.houseplant",
-    "pk": 4,
-    "fields": {
-      "name": "Majestic Palm",
-      "description": "Majestic Palm (Ravenea rivularis) has upward-arching narrow, pinnately compound leaves arranged up the stem. As the breeze blows through their leaves, they have a waving, graceful look that catches the eye.",
-      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/c1edd79c08b4--pl-MajesticPalm-8IN-pl-grower-132401_730x.jpg?v=1651182191",
-      "price": 75.0,
-      "inventory": 45,
-      "product_type": "houseplant",
+      "product_type": [1],
       "care_level": "novice",
       "light_level": "high",
       "water_needs": "medium",
