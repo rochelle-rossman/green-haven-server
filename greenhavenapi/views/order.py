@@ -2,7 +2,8 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.exceptions import ValidationError
-from greenhavenapi.models import Order, ProductOrder, PaymentMethod, Product
+from django.utils import timezone
+from greenhavenapi.models import Order, ProductOrder, PaymentMethod, Product, User
 
 class OrderSerializer(serializers.ModelSerializer):
     """Serializer for Orders"""
@@ -82,13 +83,17 @@ class OrderView(ViewSet):
             order = Order.objects.get(pk=pk)
         except Order.DoesNotExist:
             return Response({'message': 'Order does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        # When the order's status is updated to 'completed', add the date to the ordered_on field  
+        order.status = request.data["status"]
+        if order.status == 'completed' and order.ordered_on is None:
+            order.ordered_on = timezone.now().date()
         if request.data.get("payment_method"):
             try:
                 payment_method = PaymentMethod.objects.get(id=request.data["payment_method"])
                 order.payment_method = payment_method
             except PaymentMethod.DoesNotExist:
                 return Response({'message': 'PaymentMethod does not exist'}, status=status.HTTP_404_NOT_FOUND)
-          # If there is no payment_method in the request data, set the payment_method to None
+        # If there is no payment_method in the request data, set the payment_method to None
         else:
             order.payment_method = None
         # Get the product ids from the order's product information and validate the field is a list
@@ -126,3 +131,40 @@ class OrderView(ViewSet):
             product_order.save()
         order.save()
         return Response({'message': 'Order Updated successfully', 'data': OrderSerializer(order).data})
+      
+    def create(self, request):
+        """Create a new order"""
+        products = request.data.get('products')
+        customer = User.objects.get(id=request.data["customer"])
+        payment_method = PaymentMethod.objects.get(pk=request.data["payment_method"])
+        order_status = 'in-progress'
+        if 'status' in request.data:
+            order_status = request.data['status']
+        if order_status != 'in-progress':
+            try:
+                payment_method = PaymentMethod.objects.get(pk=request.data["payment_method"])
+            except PaymentMethod.DoesNotExist:
+                return Response({"message": "Invalid payment_method id"}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            payment_method = None
+            
+        order = Order.objects.create(customer=customer, payment_method=payment_method)
+        total = 0
+        product_list = []
+        for product in products:
+            try:
+                product_obj = Product.objects.get(id=product["id"])
+            except Product.DoesNotExist:
+                return Response({"message": f"Product {product['id']} does not exist"})
+            product_obj.deduct_from_inventory(product['quantity'])
+            ProductOrder.objects.create(product=product_obj, order=order, quantity=product['quantity'])
+            product_list.append(product_obj)
+            total += product_obj.price * product['quantity']
+            serializer = OrderSerializer(order)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def destroy(self, request, pk):
+        """Delete order"""
+        order = Order.objects.get(pk=pk)
+        order.delete()
+        return Response({"status": status.HTTP_204_NO_CONTENT})
