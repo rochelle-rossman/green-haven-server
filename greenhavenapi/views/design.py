@@ -7,6 +7,7 @@ from greenhavenapi.models import Design, Product, ProductDesign
 
 class DesignSerializer(serializers.ModelSerializer):
     """JSON serializer for design"""
+    products = serializers.SerializerMethodField()
     class Meta:
         model = Design
         fields = '__all__'
@@ -18,6 +19,17 @@ class DesignSerializer(serializers.ModelSerializer):
         data['room'] = dict(Design.ROOM_CHOICES).get(data['room'])
         data['style'] = dict(Design.STYLE_CHOICES).get(data['style'])
         return data
+    
+    def get_products(self, obj):
+        """Get a list of products associated with the design object"""
+        products_list = []
+        for product in obj.products.all():
+            try:
+                ProductDesign.objects.get(design=obj, product=product)
+                products_list.append({"id": product.id,"name": product.name, "price": product.price})
+            except ProductDesign.DoesNotExist:
+                pass
+        return products_list
           
         
 class DesignView(ViewSet):
