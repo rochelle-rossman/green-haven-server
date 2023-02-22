@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from greenhavenapi.views import check_user, register_user, UserView, ProductView, ProductTypeView, OrderView, DesignView
+from greenhavenapi.views import check_user, register_user, UserView, ProductView, ProductTypeView, OrderView, DesignView, PaymentMethodView, ProductOrderView, ProductDesignView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserView, 'user')
@@ -25,6 +25,9 @@ router.register(r'products', ProductView, 'product')
 router.register(r'product_types', ProductTypeView, 'product_type')
 router.register(r'orders', OrderView, 'order')
 router.register(r'designs', DesignView, 'design')
+router.register(r'payment_methods', PaymentMethodView, 'payment_method')
+router.register(r'product_orders', ProductOrderView, 'product_orders')
+router.register(r'product_designs', ProductDesignView, 'product_design')
 
 urlpatterns = [
     path('register', register_user),
