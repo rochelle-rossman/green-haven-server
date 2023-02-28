@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.exceptions import ValidationError
 from django.utils import timezone
+from django.db.models import Q
 from greenhavenapi.models import Order, ProductOrder, PaymentMethod, Product, User
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -61,9 +62,14 @@ class OrderView(ViewSet):
     def list(self, request):
         """Returns a list of orders"""
         customer = request.query_params.get("customer")
+        order_status = request.query_params.get("status")
         orders = Order.objects.all()
-        if customer:
+        if order_status and customer:
+            orders = orders.filter(Q(status=order_status) & Q(customer=customer))
+        elif customer:
             orders = orders.filter(customer=customer)
+        elif order_status:
+            orders = orders.filter(status=order_status)
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data)
       
@@ -136,7 +142,6 @@ class OrderView(ViewSet):
         """Create a new order"""
         products = request.data.get('products')
         customer = User.objects.get(id=request.data["customer"])
-        payment_method = PaymentMethod.objects.get(pk=request.data["payment_method"])
         order_status = 'in-progress'
         if 'status' in request.data:
             order_status = request.data['status']
