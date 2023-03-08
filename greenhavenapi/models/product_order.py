@@ -5,7 +5,7 @@ from .order import Order
 class ProductOrder(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default=0, null=True, blank=True)
 
     # This method overrides the default `save` method and calls the parent class's save method first
     def save(self, *args, **kwargs):

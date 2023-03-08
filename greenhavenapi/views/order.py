@@ -34,7 +34,7 @@ class OrderSerializer(serializers.ModelSerializer):
         for product in obj.products.all():
             try:
                 product_order = ProductOrder.objects.get(order=obj, product=product)
-                products_list.append({"name": product.name, "quantity": product_order.quantity, "price": product.price})
+                products_list.append({"id": product.id, "quantity": product_order.quantity})
             except ProductOrder.DoesNotExist:
                 pass
         return products_list
@@ -93,6 +93,7 @@ class OrderView(ViewSet):
         order.status = request.data["status"]
         if order.status == 'completed' and order.ordered_on is None:
             order.ordered_on = timezone.now().date()
+        # If payment_method exists in the order, add the payment_method
         if request.data.get("payment_method"):
             try:
                 payment_method = PaymentMethod.objects.get(id=request.data["payment_method"])
@@ -129,7 +130,7 @@ class OrderView(ViewSet):
                 product_order.save()
 
         for product in products:
-            # Get or create the product order associated with the order and product
+        # Get or create the product order associated with the order and product
             product_order, created = ProductOrder.objects.get_or_create(order=order, product=product)
             if not created:
                 continue

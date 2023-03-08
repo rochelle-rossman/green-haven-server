@@ -47,6 +47,23 @@ class ProductView(ViewSet):
         queryset = Product.objects.all()
         if product_type:
             queryset = queryset.filter(product_type__name=product_type)
+            if product_type == 'Houseplants':
+                light_level = request.query_params.get('light_level')
+                care_level = request.query_params.get('care_level')
+                water_needs = request.query_params.get('water_needs')
+                pet_friendly = request.query_params.get('pet_friendly')
+                if light_level:
+                    queryset = queryset.filter(light_level=light_level)
+                if care_level:
+                    queryset = queryset.filter(care_level=care_level)
+                if water_needs:
+                    queryset = queryset.filter(water_needs=water_needs)
+                if pet_friendly:
+                    queryset = queryset.filter(pet_friendly=pet_friendly)
+            if product_type == 'Home/Decor':
+                style = request.query_params.get('style')
+                if style:
+                    queryset = queryset.filter(style=style)
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
