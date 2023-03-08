@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from greenhavenapi.models import ProductOrder, Product, Order, User
+from greenhavenapi.models import ProductOrder, Product, Order, User, PaymentMethod
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for users"""
@@ -15,10 +15,16 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ('id', 'name', 'price', 'image_url', 'product_type')
         
+class PaymentMethodSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaymentMethod
+        fields = ('id', 'label')
+        
         
 class OrderSerializer(serializers.ModelSerializer):
     """JSON serializer for Order"""
     customer = UserSerializer()
+    payment_method = PaymentMethodSerializer()
     class Meta:
         model = Order
         fields = '__all__'

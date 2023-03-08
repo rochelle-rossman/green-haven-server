@@ -19,3 +19,4 @@ class Design(models.Model):
     style = models.CharField(max_length=25, choices=STYLE_CHOICES)
     image_url = models.CharField(max_length=100)
     products = models.ManyToManyField("Product", through="ProductDesign")
+    description = models.CharField(max_length=1000, default="", blank=True)

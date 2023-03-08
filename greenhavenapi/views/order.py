@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.exceptions import ValidationError
 from django.utils import timezone
+from django.db.models import Q
 from greenhavenapi.models import Order, ProductOrder, PaymentMethod, Product, User
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -33,7 +34,7 @@ class OrderSerializer(serializers.ModelSerializer):
         for product in obj.products.all():
             try:
                 product_order = ProductOrder.objects.get(order=obj, product=product)
-                products_list.append({"name": product.name, "quantity": product_order.quantity, "price": product.price})
+                products_list.append({"id": product.id, "quantity": product_order.quantity})
             except ProductOrder.DoesNotExist:
                 pass
         return products_list
@@ -61,9 +62,14 @@ class OrderView(ViewSet):
     def list(self, request):
         """Returns a list of orders"""
         customer = request.query_params.get("customer")
+        order_status = request.query_params.get("status")
         orders = Order.objects.all()
-        if customer:
+        if order_status and customer:
+            orders = orders.filter(Q(status=order_status) & Q(customer=customer))
+        elif customer:
             orders = orders.filter(customer=customer)
+        elif order_status:
+            orders = orders.filter(status=order_status)
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data)
       
@@ -87,6 +93,7 @@ class OrderView(ViewSet):
         order.status = request.data["status"]
         if order.status == 'completed' and order.ordered_on is None:
             order.ordered_on = timezone.now().date()
+        # If payment_method exists in the order, add the payment_method
         if request.data.get("payment_method"):
             try:
                 payment_method = PaymentMethod.objects.get(id=request.data["payment_method"])
@@ -123,7 +130,7 @@ class OrderView(ViewSet):
                 product_order.save()
 
         for product in products:
-            # Get or create the product order associated with the order and product
+        # Get or create the product order associated with the order and product
             product_order, created = ProductOrder.objects.get_or_create(order=order, product=product)
             if not created:
                 continue
@@ -136,7 +143,6 @@ class OrderView(ViewSet):
         """Create a new order"""
         products = request.data.get('products')
         customer = User.objects.get(id=request.data["customer"])
-        payment_method = PaymentMethod.objects.get(pk=request.data["payment_method"])
         order_status = 'in-progress'
         if 'status' in request.data:
             order_status = request.data['status']

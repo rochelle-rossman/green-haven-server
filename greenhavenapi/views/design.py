@@ -2,7 +2,6 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.exceptions import ValidationError
-from django.db.models import Q
 from greenhavenapi.models import Design, Product, ProductDesign
 
 class DesignSerializer(serializers.ModelSerializer):
@@ -26,7 +25,7 @@ class DesignSerializer(serializers.ModelSerializer):
         for product in obj.products.all():
             try:
                 ProductDesign.objects.get(design=obj, product=product)
-                products_list.append({"id": product.id,"name": product.name, "price": product.price})
+                products_list.append({"id": product.id,"name": product.name, "price": product.price, "image_url": product.image_url})
             except ProductDesign.DoesNotExist:
                 pass
         return products_list
@@ -39,12 +38,12 @@ class DesignView(ViewSet):
         style = request.query_params.get('style')
         room = request.query_params.get('room')
         designs = Design.objects.all()
-        if style:
+        if style and room:
+            designs = designs.filter(style=style, room=room)
+        elif style:
             designs = designs.filter(style=style)
         elif room:
             designs = designs.filter(room=room)
-        elif style and room:
-            designs = designs.filter(Q(style=style) & Q(room=room))
         serializer = DesignSerializer(designs, many=True)
         return Response(serializer.data)
       
@@ -63,6 +62,7 @@ class DesignView(ViewSet):
         design.room = request.data["room"]
         design.style = request.data["style"]
         design.image_url = request.data["image_url"]
+        design.description = request.data["description"]
         product_ids = request.data["products"]
         if not isinstance(product_ids, list):
             raise ValidationError({"message": "products field must be a list"})
@@ -92,8 +92,9 @@ class DesignView(ViewSet):
         room = request.data["room"]
         products = request.data["products"]
         image_url = request.data["image_url"]
+        description = request.data["description"]
         
-        design = Design.objects.create(style=style, room=room, image_url=image_url)
+        design = Design.objects.create(style=style, room=room, image_url=image_url, description=description)
         
         product_list = []
         for product in products:
