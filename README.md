@@ -29,9 +29,8 @@ https://github.com/rochelle-rossman/green-haven-client
     ```
 
 - Select interpreter within vscode
-<kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> (Mac)
+    - Open your Command Palette: <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> (Mac)
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>(Windows/Linux)
-    - Open your Command Palette
     - Search for "Python: Select Interpreter"
     - Select the interpreter that includes `green-haven-server` in the name.
 
