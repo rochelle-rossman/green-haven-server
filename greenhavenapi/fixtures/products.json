@@ -169,7 +169,7 @@
   },
   {
     "model":"greenhavenapi.product",
-    "id": 13,
+    "pk": 13,
     "fields":{
       "product_type": [1],
       "name": "Bird of Paradise",
