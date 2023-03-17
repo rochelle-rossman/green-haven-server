@@ -15,8 +15,8 @@ class Design(models.Model):
       ('traditional', 'Traditional'),
       ('midcentury_modern', 'Midcentury Modern'),
     )
-    room = models.CharField(max_length=15, choices=ROOM_CHOICES)
-    style = models.CharField(max_length=25, choices=STYLE_CHOICES)
-    image_url = models.CharField(max_length=100)
+    room = models.CharField(max_length=50, choices=ROOM_CHOICES)
+    style = models.CharField(max_length=50, choices=STYLE_CHOICES)
+    image_url = models.CharField(max_length=500)
     products = models.ManyToManyField("Product", through="ProductDesign")
     description = models.CharField(max_length=1000, default="", blank=True)
