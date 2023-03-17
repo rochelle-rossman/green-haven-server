@@ -137,5 +137,321 @@
       "water_needs": "medium",
       "pet_friendly": true
     }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 11,
+    "fields":{
+      "product_type": [3],
+      "name": "Mid Century 2-Piece Aluminum Pot Planter Set",
+      "image_url": "https://secure.img1-fg.wfcdn.com/im/84088825/resize-h445%5Ecompr-r85/7233/72338013/Canas+Mid+Century+2-Piece+Aluminum+Pot+Planter+Set.jpg",
+      "description": "This Mid Century 2-Piece Aluminum Pot Planter Set is a stylish way to bring needed greenery into your space. Featuring hexagonal-shaped metal pots finished with a stucco-like plaster. The pots sit atop a black 3-leg metal frame.",
+      "price": 80.0,
+      "inventory": 37,
+      "style": "midcentury_modern"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 12,
+    "fields":{
+      "product_type": [1],
+      "name": "Boston Fern",
+      "image_url": "https://cdn.shopify.com/s/files/1/2781/9558/products/8FERN_COMPACTA-2_c5b6ad72-bc93-4fe3-871b-63182e27849b.jpg?v=1658248361&width=1100",
+      "description": "According to NASA, this fern is an A-list air purifier. You've probably seen it around the office or out at the mall. It's more tolerant and less picky about environment than most ferns, and can even tolerate a short dry period. Pro-tip: Ferns love to be watered. To avoid root rot, plant in a clay pot with a drainage hole.",
+      "price": 30.99,
+      "inventory": 40,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "id": 13,
+    "fields":{
+      "product_type": [1],
+      "name": "Bird of Paradise",
+      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/143324fa29fb--pl-giantbirdofparadise-6in-po-grower-a95692_730x.jpg?v=1657295164",
+      "description": "Commonly known as the Giant White Bird of Paradise, the Strelitzia Nicolai is a flowering plant that is native to South. Great for people who like variety and variegated leaves",
+      "price": 30.99,
+      "inventory": 40,
+      "light_level": "high",
+      "water_needs": "low",
+      "care_level": "novice",
+      "pet_friendly": false
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 14,
+    "fields":{
+      "product_type": [2],
+      "name": "Rice Paper Shade",
+      "image_url": "https://images.hermanmiller.group/m/736d22dbd5b40168/W-HAY_2516179_100189062_classic_white_f.png?trim=auto&trim-sd=1&blend-mode=darken&blend=f8f8f8&bg=f8f8f8&auto=format&w=1200&q=68&h=1000",
+      "description": "Versatile shade inspired by Asian paper lanterns.Made of lightweight paper with a ribbed bamboo frame",
+      "price": 30.99,
+      "inventory": 40
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 15,
+    "fields":{
+      "product_type": [1],
+      "name": "Heartleaf Philodendron",
+      "image_url": "https://cdn.shopify.com/s/files/1/0838/7991/products/philodendron_cordatum_heart_leaf_PDP_01_600x.jpg?v=1669760362",
+      "description": "The Heartleaf Philodendron is a lush and easy to care for plant that can grow quite long winding vines with beautiful heart-shaped leaves. If well taken care of, it can last for decades and is easily propagated. Native to the tropical regions of South and Central America, the Heartleaf loves bright indirect light and watering once the soil is completely dry.",
+      "price": 20.99,
+      "inventory": 40,
+      "light_level": "medium",
+      "water_needs": "low",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 16,
+    "fields":{
+      "product_type": [2],
+      "name": "Taupe Pampas Grass",
+      "image_url": "https://cb2.scene7.com/is/image/CB2/FauxPampasGrassTaupeStemS3SHF20/$web_pdp_main_carousel_md$/200427111320/faux-pampas-grass-taupe-stem-set-of-3.jpg",
+      "description": "Hand-wrapped stems of faux pampas grass fan out in taupe-colored tufts. Sold in a set of three for max fullness.",
+      "price": 19.99,
+      "inventory": 38,
+      "style": "bohemian"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 17,
+    "fields":{
+      "product_type": [1],
+      "name": "ZZ Plant",
+      "image_url": "https://cdn.shopify.com/s/files/1/2781/9558/products/10ZZ_PLANT-1.jpg?v=1675382665&width=1100",
+      "description": "Arguably one of the toughest plants in the game. Its leaves are dark green, and grow upon thick stems and rhizomatous roots. It's able to go without water for weeks on end and can survive in almost any light condition, making it the perfect plant for a busy schedule.",
+      "price": 20.99,
+      "inventory": 40,
+      "light_level": "low",
+      "water_needs": "low",
+      "care_level": "novice",
+      "pet_friendly": false
+    }
+  },
+  { 
+    "model":"greenhavenapi.product",
+    "pk": 18,
+    "fields":{
+      "product_type": [1],
+      "name": "Oxalis Triangularis ‘Purple Shamrock’",
+      "image_url": "https://www.sarahcottaplants.com/uploads/1/3/2/4/132474542/s383942088287007187_p826_i4_w2046.jpeg?width=800",
+      "description": "Oxalis triangularis, commonly called false shamrock, is a species of perennial plant in the family Oxalidaceae. It is native to several countries in southern South America. This woodsorrel is typically grown as a houseplant but can be grown outside in USDA climate zones 8a–11, preferably in light shade..",
+      "price": 18.99,
+      "inventory": 40,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": false
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 19,
+    "fields":{
+      "product_type": [1],
+      "name": "Fern 'Blue Star'",
+      "image_url": "https://cdn.shopify.com/s/files/1/0510/8465/6794/products/1-Fern-Blue_Star-4.png?v=1649106529",
+      "description": "The fronds are large and pinnatifid (deeply lobed), from 30–130 cm long and 10–50 cm broad, with up to 35 pinnae; they vary in color from bright green to glaucous green and have undulate margins",
+      "price": 18.99,
+      "inventory": 40,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": false
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 20,
+    "fields":{
+      "product_type": [1],
+      "name": "Lemon Lime Prayer Plant",
+      "image_url": "https://m.media-amazon.com/images/I/71-zV8BG9XL._AC_SX425_.jpg",
+      "description": "Lemon lime prayer plant is originated from Brazi, and a popular and attractive housplant. Moderate, and indirect sunlight .Water: Every 1-2 weeks when soil is almost dry out half way down. Climate: 65 and 70 °F",
+      "price": 21.99,
+      "inventory": 40,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 21,
+    "fields":{
+      "product_type": [2],
+      "name": "Double Layer Ceiling Lamp",
+      "image_url": "https://cdn.shopify.com/s/files/1/0158/8202/7108/products/rustic_light_fixtures_2048x.jpg?v=1556734055",
+      "description": "Creating the exotic and entrancing effect of a weaving shadow. Can be used as a classy and key decorative item in living and/or dining room. Measure : D 58 x H 35 cm; Material: Bamboo; Color: Black / Natural",
+      "price": 149.99,
+      "inventory": 35,
+      "style": "modern"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 22,
+    "fields":{
+      "product_type": [2],
+      "name": "MCM Brass & Glass Coffee Table",
+      "image_url": "https://static.wixstatic.com/media/2b56a8_0eb18bde6c1c4974890b2b0a5b853fc0~mv2.jpg/v1/fill/w_500,h_667,al_c,q_85,usm_0.66_1.00_0.01/2b56a8_0eb18bde6c1c4974890b2b0a5b853fc0~mv2.webp",
+      "description": "A vintage  style mid century modern brass & glass square coffee table. Measurements: 16.5 in H x 38 in W",
+      "price": 189.99,
+      "inventory": 20,
+      "style": "midcentury_modern"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 23,
+    "fields":{
+      "product_type": [2],
+      "name": "Natural Woven Chandelier",
+      "image_url": "https://www.livingspaces.com/globalassets/productassets/200000-299999/280000-289999/285000-285999/285700-285799/285730/285730_detail_47.jpg?w=820&h=553&mode=pad",
+      "description": "The durable steel housing is covered with a straw-style weave for a rustic finish. Steel body offers durability. Straw weave adds natural style. Hardwired for efficient use. Mounting hardware is included. Assembly required.",
+      "price": 219.99,
+      "inventory": 20,
+      "style": "modern"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 24,
+    "fields":{
+      "product_type": [1],
+      "name": "Monstera Deliciosa - Swiss Cheese Plant",
+      "image_url": "https://cdn.shopify.com/s/files/1/0616/5728/4808/products/72431ce3-8804-5d72-be16-9abc02a6d42a_fe6821b6-e79c-465e-aea1-2e25babaa8de.jpg?v=1673484435&width=600",
+      "description": "The Swiss Cheese Plant (Monstera Deliciosa) is know for its large perforated leaves, which have a distinctive appearance that is instantly recognizable and makes a bold statement in any space. The plant is also relatively easy to care for, making it a great choice for beginners, while its fast growth rate and ability to climb and vine make it an interesting plant to watch as it develops over time.",
+      "price": 34.99,
+      "inventory": 60,
+      "light_level": "high",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": false
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 25,
+    "fields":{
+      "product_type": [2],
+      "name": "Moroccan Leather Pouf",
+      "image_url": "https://cdn11.bigcommerce.com/s-2mpfm/images/stencil/640w/products/155622/610925/469ee94e3d9af88c7805f4296526ec47c1d0cc64__79719.1623075585.jpg?c=2",
+      "description": "This oversized ottoman pouf will make a statement in any home. Filled with polystyrene beads, this round ottoman is soft to the touch and comfortable to sit on. Its distinctive stitching pattern and vibrant color adds style to any room.",
+      "price": 149.99,
+      "inventory": 60,
+      "style": "bohemian"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 26,
+    "fields":{
+      "product_type": [3],
+      "name": "Black Cement Hanging Planter",
+      "image_url": "https://cb2.scene7.com/is/image/CB2/SeminyakBkHngngPlntrLrgSHS23/$web_pdp_main_carousel_md$/221214140529/seminyak-black-cement-outdoor-hanging-planter-large.jpg",
+      "description": "Raw material of the city cements a foundation for lush growth. Outdoor planter hangs from durable black rope, bringing texture and interest to the balcony/patio/porch. Works indoors, too, and thrives in multiples.",
+      "price": 34.99,
+      "inventory": 60
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 27,
+    "fields":{
+      "product_type": [3],
+      "name": "Rattan Hanging Basket",
+      "image_url": "https://secure.img1-cg.wfcdn.com/im/87823463/compr-r85/1242/124281199/gerold-rattan-hanging-planter.jpg",
+      "description": "Hanging basket in braided rattan with three cords and a metal ring at top. Diameter 6 1/4 in., height 6 1/4 in. Total length approx. 27 1/2 in.",
+      "price": 17.99,
+      "inventory": 54
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 28,
+    "fields":{
+      "product_type": [1],
+      "name": "Mistletoe Cactus",
+      "image_url": "https://picturethisai.com/image-handle/website_cmsname/image/1080/209420122864812032.jpeg?x-oss-process=image/format,webp/quality,q_60/resize,l_600&v=1.0",
+      "description": "A magnificent plant with an extraordinary leaf structure, the Mistletoe Cactus is admired for its bright green pencil-thin foliage that effortlessly trails. This exquisite plant can reach up to 6 feet indoors. Native to tropical and subtropical regions in South America, Central America, and Africa, the Mistletoe Cactus thrives in warm, humid environments, so be sure to keep it somewhere cozy to make it feel at home.",
+      "price": 37.99,
+      "inventory": 60,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 29,
+    "fields":{
+      "product_type": [2],
+      "name": "Arne Norell Safari Chair",
+      "image_url": "https://cdn.shopify.com/s/files/1/0037/0737/1566/products/fata1884_700x.jpg?v=1569321792",
+      "description": "Lovely safari chair or easy chair in leather and beech wood frame. Designed by Arne Norell, 1964, produced by Arne Norell AB in Aneby, Sweden, 1970s. Height: 28.35 in (72 cm), Width: 25.99 in (66 cm), Depth: 25.99 in (66 cm) Seat Height: 14.97 in (38 cm)",
+      "price": 479.99,
+      "inventory": 2,
+      "style": "midcentury_modern"
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 30,
+    "fields":{
+      "product_type": [1],
+      "name": "Areca Palm",
+      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/5a2f1fe1a9bf--pl-ParlorPalm-6IN-pl-cer-white-7ce203_730x.jpg?v=1646672728",
+      "description": "Enjoy the soft, fine textured arching fronds of the Arecas palm (Dypsis lutescens) as an indoor house plant or in the garden in warmer zones of the country. Place them where there is headroom to grow, like in a foyer stairwell or outside porch area in a container.",
+      "price": 49.99,
+      "inventory": 35,
+      "light_level": "medium",
+      "water_needs": "low",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 31,
+    "fields":{
+      "product_type": [1],
+      "name": "Variegated Spider Plant",
+      "image_url": "https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/ea7cdbe05bfe--LivelyRoot-Shoot2-10IN-Grower-4fdbfc_730x.jpg?v=1611775945",
+      "description": "One of the best air purifying plants, we love them for their spiky variegated foliage. They are easy to care for and look great set on a table-top or hung from a macrame sling. You can even keep them out on the patio during summer — just remember to bring them inside if there's any risk of frost.",
+      "price": 44.99,
+      "inventory": 35,
+      "light_level": "medium",
+      "water_needs": "medium",
+      "care_level": "novice",
+      "pet_friendly": true
+    }
+  },
+  {
+    "model":"greenhavenapi.product",
+    "pk": 32,
+    "fields":{
+      "product_type": [2],
+      "name": "Bamboo Pendant Light",
+      "image_url": "https://cdn.shopify.com/s/files/1/0439/4208/4762/products/lighting-wan-bamboo-pendant-light-31388633792709_5000x.jpg?v=1653551018",
+      "description": "Rattan & Bamboo Pendant Light is a work of art, combining ancient hand-woven techniques with contemporary design. Made with natural rattan and bamboo, each light is crafted with skill and care. The result is a beautiful pendant light that brings a touch of organic sophistication to any space. Hang it in your living room, bedroom, or dining room to create a warm and inviting atmosphere.",
+      "price": 44.99,
+      "inventory": 35,
+      "style": "bohemian"
+    }
   }
 ]

@@ -1,14 +1,6 @@
 [
   {
     "model": "greenhavenapi.productdesign",
-    "pk": 1,
-    "fields": {
-      "product": 1,
-      "design": 3
-    }
-  },
-  {
-    "model": "greenhavenapi.productdesign",
     "pk": 2,
     "fields": {
       "design": 4,
