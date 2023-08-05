@@ -3,7 +3,7 @@
     "model": "greenhavenapi.user",
     "pk": 1,
     "fields": {
-      "uid": "ff9ZN9nkhcWSuTQchrONXcEtlCJ3",
+      "uid": 7,
       "first_name": "Rochelle",
       "last_name": "Rossman",
       "email": "rochelle.rossman@gmail.com",
